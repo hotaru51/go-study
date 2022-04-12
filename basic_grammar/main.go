@@ -24,4 +24,23 @@ func main() {
     print("yoshiko ")
     println("yohane")
     println("dia kanan mari")
+
+    // 変数定義
+    var n int
+    var x, y, z int
+    var (
+        a, b int
+        name string
+    )
+
+    // 代入
+    n = 3
+    x, y, z = 4, 4, 5
+    a, b = 2, 5
+    name = "kotori"
+
+    fmt.Printf("n = %d\n", n)
+    fmt.Printf("x, y, z = %d, %d, %d\n", x, y, z)
+    fmt.Printf("a, b = %d, %d\n", a, b)
+    fmt.Printf("name = %s\n", name)
 }
