@@ -4,6 +4,9 @@ import (
     "fmt"
 )
 
+// パッケージ変数
+var pkg = "aaa"
+
 func main() {
     // fmt.Println
     // 複数渡すとスペース区切りで出力
@@ -43,4 +46,19 @@ func main() {
     fmt.Printf("x, y, z = %d, %d, %d\n", x, y, z)
     fmt.Printf("a, b = %d, %d\n", a, b)
     fmt.Printf("name = %s\n", name)
+
+    // := で定義と代入を同時に行う、型推論
+    i := 445
+    // i := 874 <- := -で再代入は不可
+    f := 7.45
+    s := "honoka"
+    fmt.Printf("%d %f %s\n", i, f, s)
+
+    var (
+        nico = 3
+        maki = 1
+        eli  = 3
+    )
+    fmt.Printf("nico = %d , maki = %d, eli = %d\n", nico, maki, eli)
+    fmt.Println(pkg)
 }
