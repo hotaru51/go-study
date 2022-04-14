@@ -61,4 +61,19 @@ func main() {
     )
     fmt.Printf("nico = %d , maki = %d, eli = %d\n", nico, maki, eli)
     fmt.Println(pkg)
+
+    /*
+     * データ型
+     */
+
+    // bool
+    var bb bool
+    bb = true
+    fmt.Printf("b = %v\n", bb)
+
+    // 整数型のキャスト
+    var_int := 1
+    var_byte := byte(var_int)
+    var_i64 := int64(var_int)
+    fmt.Printf("var_int = %d, var_byte = %d, var_i64 = %d\n", var_int, var_byte, var_i64)
 }
