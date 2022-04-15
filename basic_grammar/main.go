@@ -2,6 +2,7 @@ package main
 
 import (
     "fmt"
+    "math"
 )
 
 // パッケージ変数
@@ -76,4 +77,9 @@ func main() {
     var_byte := byte(var_int)
     var_i64 := int64(var_int)
     fmt.Printf("var_int = %d, var_byte = %d, var_i64 = %d\n", var_int, var_byte, var_i64)
+
+    // mathパッケージで各型の最大値を出す
+    fmt.Printf("int32_max = %d\n", math.MaxInt32)
+    fmt.Printf("int64_max = %d\n", math.MaxInt64)
+    fmt.Printf("int64_min = %d\n", math.MinInt64)
 }
