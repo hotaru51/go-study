@@ -82,4 +82,14 @@ func main() {
     fmt.Printf("int32_max = %d\n", math.MaxInt32)
     fmt.Printf("int64_max = %d\n", math.MaxInt64)
     fmt.Printf("int64_min = %d\n", math.MinInt64)
+
+    // 浮動小数点型
+    fmt.Printf("float32_max = %f\n", math.MaxFloat32)
+    fmt.Printf("float64_max = %f\n", math.MaxFloat64)
+    fmt.Printf("float32_smallest_nonzero = %f\n", math.SmallestNonzeroFloat32)
+    fmt.Printf("float64_smallest_nonzero = %f\n", math.SmallestNonzeroFloat64)
+
+    // 暗黙的な変数の代入ではfloat64となる
+    f64 := 0.874
+    fmt.Printf("f64 = %T\n", f64)
 }
