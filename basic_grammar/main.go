@@ -92,4 +92,15 @@ func main() {
     // 暗黙的な変数の代入ではfloat64となる
     f64 := 0.874
     fmt.Printf("f64 = %T\n", f64)
+
+    // 正の無限大と負の無限大とNaN
+    zero := 0.0
+    pinf := 1.0 / zero
+    ninf := -1.0 / zero
+    nan := 0.0 /zero
+    fmt.Printf("pinf = %v, ninf = %v, nan = %v\n", pinf, ninf, nan)
+
+    // 浮動小数点型から整数型へのキャストは切り捨てになる
+    fnum := 2.52
+    fmt.Printf("fnum = %f, int(fnum) = %d", fnum, int(fnum))
 }
