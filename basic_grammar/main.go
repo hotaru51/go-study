@@ -102,5 +102,9 @@ func main() {
 
     // 浮動小数点型から整数型へのキャストは切り捨てになる
     fnum := 2.52
-    fmt.Printf("fnum = %f, int(fnum) = %d", fnum, int(fnum))
+    fmt.Printf("fnum = %f, int(fnum) = %d\n", fnum, int(fnum))
+
+    // rune型
+    r := '曜'
+    fmt.Printf("r = '曜' = %v", r)
 }
