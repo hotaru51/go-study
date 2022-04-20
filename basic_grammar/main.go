@@ -106,5 +106,13 @@ func main() {
 
     // rune型
     r := '曜'
-    fmt.Printf("r = '曜' = %v", r)
+    fmt.Printf("r = '曜' = %v\n", r)
+
+    // 文字列とRAW文字列リテラル
+    str := "千歌"
+    rawlit := `よう
+ちか
+りこ`
+    fmt.Printf("str = %s\n", str)
+    fmt.Printf("%s", rawlit)
 }
