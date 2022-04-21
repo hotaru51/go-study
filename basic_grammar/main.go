@@ -112,7 +112,23 @@ func main() {
     str := "千歌"
     rawlit := `よう
 ちか
-りこ`
+りこ
+`
     fmt.Printf("str = %s\n", str)
     fmt.Printf("%s", rawlit)
+
+    // 配列
+    intarr := [9]int{1,2,3,4,5,6,7,9}
+    fmt.Printf("intarr = %v\n", intarr)
+    // intの場合は初期値を入れないと0で初期化される
+    var intarr2 [3]int
+    fmt.Printf("intarr2 = %v\n", intarr2)
+    // 他のデータ型でも自動で初期化される
+    var strarr [3]string
+    fmt.Printf("strarr = %v\n", strarr)
+    var boolarr [3]bool
+    fmt.Printf("boolarr = %v\n", boolarr)
+    // 初期値を指定する場合は要素数を指定しない書き方もできる
+    intarr3 := [...]int{445, 745, 25, 874}
+    fmt.Printf("intarr3 = %v\n", intarr3)
 }
