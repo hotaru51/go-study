@@ -131,4 +131,12 @@ func main() {
     // 初期値を指定する場合は要素数を指定しない書き方もできる
     intarr3 := [...]int{445, 745, 25, 874}
     fmt.Printf("intarr3 = %v\n", intarr3)
+
+    // 配列の代入
+    strarr1 := [3]string{"honoka", "kotori", "umi"}
+    strarr2 := [3]string{"ayumu", "setsuna", "ai"}
+    strarr1 = strarr2
+    // 配列の代入はコピーとなるため、この場合strarr2[1]に代入してもstrarr1[1]には影響しない
+    strarr2[1] = "kasumi"
+    fmt.Printf("strarr1 = %v, strarr2 = %v\n", strarr1, strarr2)
 }
