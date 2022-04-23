@@ -139,4 +139,12 @@ func main() {
     // 配列の代入はコピーとなるため、この場合strarr2[1]に代入してもstrarr1[1]には影響しない
     strarr2[1] = "kasumi"
     fmt.Printf("strarr1 = %v, strarr2 = %v\n", strarr1, strarr2)
+
+    // interface型
+    var itfc interface{}
+    fmt.Printf("itfc = %v\n", itfc)
+    // どのデータ型でも代入できる
+    itfc = int(32)
+    itfc = "kuku"
+    itfc = false
 }
