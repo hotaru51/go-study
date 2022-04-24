@@ -147,4 +147,28 @@ func main() {
     itfc = int(32)
     itfc = "kuku"
     itfc = false
+
+    // 関数
+    fmt.Printf("add(1 + 2) = %d\n", add(1, 2))
+    say("ohayohane")
+    q1, r1 := div(10, 3)
+    fmt.Printf("div(10, 3) = %d 余り %d\n", q1, r1)
+}
+
+// int xとyを足して返す
+func add(x int, y int) int {
+    return x + y
+}
+
+// 戻り値がない場合
+func say(msg string) {
+    fmt.Printf("%s\n", msg)
+}
+
+// 複数の戻り値を返す
+func div(x, y int) (int, int) {
+    q := x / y
+    r := x % y
+
+    return q, r
 }
