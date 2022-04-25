@@ -153,6 +153,10 @@ func main() {
     say("ohayohane")
     q1, r1 := div(10, 3)
     fmt.Printf("div(10, 3) = %d 余り %d\n", q1, r1)
+
+    // 戻り値の破棄
+    _, r2 := div(7, 3)
+    fmt.Printf("div(7, 3)の余り = %d\n", r2)
 }
 
 // int xとyを足して返す
