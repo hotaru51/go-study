@@ -157,6 +157,8 @@ func main() {
     // 戻り値の破棄
     _, r2 := div(7, 3)
     fmt.Printf("div(7, 3)の余り = %d\n", r2)
+
+    fmt.Printf("retvar() = %d\n", retvar())
 }
 
 // int xとyを足して返す
@@ -175,4 +177,12 @@ func div(x, y int) (int, int) {
     r := x % y
 
     return q, r
+}
+
+// 戻り値を表す変数
+// この関数はint(1)を返す
+func retvar() (a int) {
+    a = 1
+
+    return
 }
