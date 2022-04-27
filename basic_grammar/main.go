@@ -159,6 +159,11 @@ func main() {
     fmt.Printf("div(7, 3)の余り = %d\n", r2)
 
     fmt.Printf("retvar() = %d\n", retvar())
+
+    // 無名関数
+    fn1 := func(x, y int) int { return x + y }
+    fmt.Printf("%T\n", fn1)
+    fmt.Printf("f(3, 2) = %d", fn1(3, 2))
 }
 
 // int xとyを足して返す
