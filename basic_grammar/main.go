@@ -163,7 +163,9 @@ func main() {
     // 無名関数
     fn1 := func(x, y int) int { return x + y }
     fmt.Printf("%T\n", fn1)
-    fmt.Printf("f(3, 2) = %d", fn1(3, 2))
+    fmt.Printf("f(3, 2) = %d\n", fn1(3, 2))
+    fmt.Printf("%#v\n", func(x, y int) int { return x * y })
+    fmt.Printf("returnFunction() -> %#v, (returnFunction())() -> %s\n", returnFunction(), (returnFunction())())
 }
 
 // int xとyを足して返す
@@ -190,4 +192,9 @@ func retvar() (a int) {
     a = 1
 
     return
+}
+
+// 関数を返す関数
+func returnFunction() func() string {
+    return func() string { return "sakurauchi" }
 }
