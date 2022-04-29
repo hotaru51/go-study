@@ -166,6 +166,14 @@ func main() {
     fmt.Printf("f(3, 2) = %d\n", fn1(3, 2))
     fmt.Printf("%#v\n", func(x, y int) int { return x * y })
     fmt.Printf("returnFunction() -> %#v, (returnFunction())() -> %s\n", returnFunction(), (returnFunction())())
+
+    // クロージャ
+    fn2 := later()
+
+    fmt.Println(fn2("nocchi"))
+    fmt.Println(fn2("kashiyuka"))
+    fmt.Println(fn2("a-chan"))
+    fmt.Println(fn2("yskt"))
 }
 
 // int xとyを足して返す
@@ -197,4 +205,16 @@ func retvar() (a int) {
 // 関数を返す関数
 func returnFunction() func() string {
     return func() string { return "sakurauchi" }
+}
+
+// クロージャ
+func later() func(string) string {
+    var store string
+
+    return func(next string) string {
+        s := store
+        store = next
+
+        return s
+    }
 }
