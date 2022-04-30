@@ -174,6 +174,31 @@ func main() {
     fmt.Println(fn2("kashiyuka"))
     fmt.Println(fn2("a-chan"))
     fmt.Println(fn2("yskt"))
+
+    // 定数
+    const X = 2
+
+    // 定数の値省略
+    // 全て同じ値になる
+    const (
+        CHIKA = 1
+        YOU
+        RIKO
+    )
+    fmt.Printf("CHIKA = %d, YOU = %d, RIKO = %d\n", CHIKA, YOU, RIKO)
+
+    // 型あり定数
+    const I64 = int64(10)
+    fmt.Printf("I64 = %d (%T)\n", I64, I64)
+
+    // enum型っぽいやつ
+    // iotaは呼び出すたびに1ずつ増分する
+    const (
+        A = iota
+        B
+        C
+    )
+    fmt.Printf("A = %d, B = %d, C = %d\n", A, B, C)
 }
 
 // int xとyを足して返す
