@@ -20,4 +20,28 @@ func main() {
     // fmt.Printf("testFunction2() => %s", foo.testFunction2())
     fmt.Println(f.TestFunction1())
     fmt.Println(TestFunction1())
+
+    fmt.Println(functionScopeSample(1))
+}
+
+func functionScopeSample(a int) (b int) {
+    // これは当然エラー
+    // a := 1
+    c := 1
+
+    // 戻り値の変数も定義済みであればエラー
+    // var b
+
+    {
+        // {}で独立したブロックを定義することで重複した変数を使うことができる
+        // ただし、有効範囲はこのブロック内のみ
+        var b string
+        b = "kashiyuka"
+        fmt.Println(b)
+    }
+
+    // 以下のbは戻り値のint型のb
+    fmt.Println(b)
+
+    return c
 }
