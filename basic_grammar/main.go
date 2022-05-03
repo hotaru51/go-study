@@ -199,6 +199,20 @@ func main() {
         C
     )
     fmt.Printf("A = %d, B = %d, C = %d\n", A, B, C)
+
+    // for
+    // 下記は無限ループ
+    /*
+    for {
+        fmt.Println("逮捕")
+    }
+    */
+
+    // いつもの
+    member1 := [...]string{"chika","riko","you"}
+    for i := 0; i < 3; i++ {
+        fmt.Println(member1[i])
+    }
 }
 
 // int xとyを足して返す
