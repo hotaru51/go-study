@@ -213,6 +213,18 @@ func main() {
     for i := 0; i < 3; i++ {
         fmt.Println(member1[i])
     }
+
+    // if
+    m1 := 1
+    // m1 := 2
+    // m1 := 3
+    if m1 == 1 {
+        fmt.Println("m1 == 1")
+    } else if m1 == 2 {
+        fmt.Println("m1 == 2")
+    } else {
+        fmt.Println("m1 != 1 && m1 != 2")
+    }
 }
 
 // int xとyを足して返す
