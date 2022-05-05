@@ -225,6 +225,12 @@ func main() {
     } else {
         fmt.Println("m1 != 1 && m1 != 2")
     }
+
+    // 簡易文付きif
+    // ここで定義した変数はブロック内のみ有効
+    if x, y := 1, 2; x < y {
+        fmt.Printf("%d < %d\n", x, y)
+    }
 }
 
 // int xとyを足して返す
