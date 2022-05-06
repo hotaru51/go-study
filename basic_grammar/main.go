@@ -231,6 +231,18 @@ func main() {
 	if x, y := 1, 2; x < y {
 		fmt.Printf("%d < %d\n", x, y)
 	}
+
+	// 他の言語のwhileの様なfor
+	i = 0
+	for i < 5 {
+		fmt.Println(i)
+		i++
+	}
+
+	// rangeを使用したfor
+	for i, s := range member1 {
+		fmt.Printf("member1[%d] = %s\n", i, s)
+	}
 }
 
 // int xとyを足して返す
