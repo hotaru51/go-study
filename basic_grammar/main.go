@@ -243,6 +243,12 @@ func main() {
 	for i, s := range member1 {
 		fmt.Printf("member1[%d] = %s\n", i, s)
 	}
+
+	// stringに対してrangeを使用するとrune型が返る
+	fmt.Printf("name = %s(%T)\n", name, name)
+	for i, r := range name {
+		fmt.Printf("name[%d] = %v(%T) = %s\n", i, r, r, string(r))
+	}
 }
 
 // int xとyを足して返す
