@@ -249,6 +249,31 @@ func main() {
 	for i, r := range name {
 		fmt.Printf("name[%d] = %v(%T) = %s\n", i, r, r, string(r))
 	}
+
+	// switch
+	sw1 := 3
+	switch sw1 {
+	case 1, 2:
+		fmt.Println("1 or 2")
+	case 3, 4:
+		fmt.Println("3 or 4")
+	default:
+		fmt.Println("unknown")
+	}
+
+	// CやJavaのswitchのようにフォールスルーさせる
+	sw2 := "N"
+	switch sw2 {
+	case "N":
+		sw2 += "I"
+		fallthrough
+	case "NI":
+		sw2 += "C"
+		fallthrough
+	default:
+		sw2 += "O"
+	}
+	fmt.Println(sw2)
 }
 
 // int xとyを足して返す
