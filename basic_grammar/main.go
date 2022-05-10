@@ -274,6 +274,19 @@ func main() {
 		sw2 += "O"
 	}
 	fmt.Println(sw2)
+
+	// 簡易分付きswitch
+	// if同様、下記の変数はswitch内でのみ有効
+	switch member := "you"; member {
+	case "yoshiko", "ruby", "hanamaru":
+		fmt.Printf("%s = 1年生", member)
+	case "chika", "you", "riko":
+		fmt.Printf("%s = 2年生", member)
+	case "kanan", "mari", "dia":
+		fmt.Printf("%s = 3年生", member)
+	default:
+		fmt.Println("unknown")
+	}
 }
 
 // int xとyを足して返す
