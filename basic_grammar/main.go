@@ -279,14 +279,21 @@ func main() {
 	// if同様、下記の変数はswitch内でのみ有効
 	switch member := "you"; member {
 	case "yoshiko", "ruby", "hanamaru":
-		fmt.Printf("%s = 1年生", member)
+		fmt.Printf("%s = 1年生\n", member)
 	case "chika", "you", "riko":
-		fmt.Printf("%s = 2年生", member)
+		fmt.Printf("%s = 2年生\n", member)
 	case "kanan", "mari", "dia":
-		fmt.Printf("%s = 3年生", member)
+		fmt.Printf("%s = 3年生\n", member)
 	default:
 		fmt.Println("unknown")
 	}
+
+	// 型アサーション
+	var if1 interface{} = 3
+	chk1 := if1.(int)     // chk1にはint型で3が入る
+	// chk2 := if1.(float64) // これは実行時エラー
+	fmt.Printf("%d(%T)\n", chk1, chk1)
+	// fmt.Println(chk1, chk2)
 }
 
 // int xとyを足して返す
