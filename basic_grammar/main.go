@@ -294,6 +294,15 @@ func main() {
 	// chk2 := if1.(float64) // これは実行時エラー
 	fmt.Printf("%d(%T)\n", chk1, chk1)
 	// fmt.Println(chk1, chk2)
+
+	// 型アサーションのエラー検知
+	var if2 interface{} = 3
+	chk2, isInt := if2.(int)
+	chk3, isFloat64 := if2.(float64)
+	// int型のアサーションが成功、isIntにはtrueが入る
+	fmt.Printf("if2.(int) = %v, %v\n", chk2, isInt)
+	// float64型のアサーションに失敗、isFloat64にはfalseが入る
+	fmt.Printf("if2.(float) = %v, %v\n", chk3, isFloat64)
 }
 
 // int xとyを足して返す
