@@ -303,6 +303,19 @@ func main() {
 	fmt.Printf("if2.(int) = %v, %v\n", chk2, isInt)
 	// float64型のアサーションに失敗、isFloat64にはfalseが入る
 	fmt.Printf("if2.(float) = %v, %v\n", chk3, isFloat64)
+
+	// 型によるswitch
+	var if3 interface{} = "ﾊﾉｹﾁｪﾝ"
+	switch if3.(type) {
+	case bool:
+		fmt.Println("if3 = boll")
+	case int:
+		fmt.Println("if3 = int")
+	case string:
+		fmt.Println("if3 = string")
+	default:
+		fmt.Println("unknown")
+	}
 }
 
 // int xとyを足して返す
