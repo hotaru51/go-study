@@ -316,6 +316,20 @@ func main() {
 	default:
 		fmt.Println("unknown")
 	}
+
+	// ラベル付き文
+	// 深いループから抜ける
+	LOOP:
+		for {
+			fmt.Println("loop1")
+			for {
+				fmt.Println("loop2")
+				for {
+					fmt.Println("loop3")
+					break LOOP
+				}
+			}
+		}
 }
 
 // int xとyを足して返す
