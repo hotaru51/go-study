@@ -147,4 +147,13 @@ func main() {
 			}
 			fmt.Println("yohane")
 		}
+
+	// defer
+	runDefer()
+}
+
+func runDefer() {
+	// defer文の式は関数終了後に処理される
+	defer fmt.Println("defer")
+	fmt.Println("mikan")
 }
