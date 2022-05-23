@@ -150,10 +150,19 @@ func main() {
 
 	// defer
 	runDefer()
+	runDefer2()
 }
 
 func runDefer() {
 	// defer文の式は関数終了後に処理される
 	defer fmt.Println("defer")
 	fmt.Println("mikan")
+}
+
+func runDefer2() {
+	// 複数定義できるが、最後に登録されたものから実行される
+	defer fmt.Println("pa")
+	defer fmt.Println("rin")
+	defer fmt.Println("gu")
+	fmt.Println("uranohoshi radio")
 }
