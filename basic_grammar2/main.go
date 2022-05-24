@@ -151,6 +151,7 @@ func main() {
 	// defer
 	runDefer()
 	runDefer2()
+	runDefer3()
 }
 
 func runDefer() {
@@ -165,4 +166,14 @@ func runDefer2() {
 	defer fmt.Println("rin")
 	defer fmt.Println("gu")
 	fmt.Println("uranohoshi radio")
+}
+
+func runDefer3() {
+	// 無名関数で複数の処理を登録する
+	defer func() {
+		fmt.Println("you")
+		fmt.Println("chika")
+		fmt.Println("ruby")
+	}()
+	fmt.Println("We are CYaRon!")
 }
