@@ -6,7 +6,11 @@ import (
 
 func main() {
 	// deferはpanic後でも実行される
-	defer fmt.Println("kotori")
+	defer func() {
+		if x := recover(); x != nil {
+			fmt.Printf("recover: %s", x)
+		}
+	}()
 	panic("runtime error")
 	fmt.Println("honoka")
 }
