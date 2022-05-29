@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"runtime"
 )
 
 func sub() {
@@ -22,4 +23,8 @@ func main() {
 	for i := 0; i < 10; i++ {
 		fmt.Println("you")
 	}
+
+	fmt.Printf("NumCPU: %d\n", runtime.NumCPU())
+	fmt.Printf("NumGoroutine: %d\n", runtime.NumGoroutine())
+	fmt.Printf("Versions: %s\n", runtime.Version())
 }
