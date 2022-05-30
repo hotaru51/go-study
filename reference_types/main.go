@@ -24,4 +24,14 @@ func main() {
 	s3 := arr1[2:4]
 	fmt.Printf("arr1 = %v\n", arr1)
 	fmt.Printf("s3 = %v\n", s3)
+
+	// スライスに要素を追加
+	s4 := []string{"ruby", "hanamaru"}
+	fmt.Printf("s4 = %v\n", s4)
+	s4 = append(s4, "yoshiko")
+	fmt.Printf("s4 = %v\n", s4)
+	// スライスにスライスを追加することも可能
+	s5 := []string{"kanan", "mari", "dia"}
+	s6 := append(s2, append(s4, s5...)...)
+	fmt.Printf("s6 = %v\n", s6)
 }
