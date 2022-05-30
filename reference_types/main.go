@@ -34,4 +34,9 @@ func main() {
 	s5 := []string{"kanan", "mari", "dia"}
 	s6 := append(s2, append(s4, s5...)...)
 	fmt.Printf("s6 = %v\n", s6)
+
+	// スライスのコピー
+	// コピー先の容量を超えるものは切り捨てられる
+	s7 := copy(s4, s6)
+	fmt.Printf("s4 = %v, s6 = %v, s7 = %v\n", s4, s6, s7)
 }
