@@ -39,4 +39,14 @@ func main() {
 	// コピー先の容量を超えるものは切り捨てられる
 	s7 := copy(s4, s6)
 	fmt.Printf("s4 = %v, s6 = %v, s7 = %v\n", s4, s6, s7)
+
+	intSlice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	// 簡易スライス式
+	s8 := intSlice[2:4]
+	fmt.Printf("s8 = %v\n", s8)
+	fmt.Printf("len(s8) = %d, cap(s8) = %d\n", len(s8), cap(s8))
+	// 完全スライス式
+	s9 := intSlice[2:4:4]
+	fmt.Printf("s9 = %v\n", s9)
+	fmt.Printf("len(s9) = %d, cap(s9) = %d\n", len(s9), cap(s9))
 }
