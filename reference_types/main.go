@@ -49,4 +49,12 @@ func main() {
 	s9 := intSlice[2:4:4]
 	fmt.Printf("s9 = %v\n", s9)
 	fmt.Printf("len(s9) = %d, cap(s9) = %d\n", len(s9), cap(s9))
+
+	// forでスライスを回す
+	for i, s := range s6 {
+		fmt.Printf("s6[%d] = %s\n", i, s)
+		// rangeの場合はここで要素を追加しても無限ループにはならない
+		s6 = append(s6, "yohane")
+	}
+	fmt.Printf("s6 = %v\n", s6)
 }
