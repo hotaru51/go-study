@@ -57,4 +57,11 @@ func main() {
 		s6 = append(s6, "yohane")
 	}
 	fmt.Printf("s6 = %v\n", s6)
+
+	variableLengthArgumentTest("honoka", "kotori", "umi")
+}
+
+// 可変長引数はスライスとして受け取る
+func variableLengthArgumentTest(s ...string) {
+	fmt.Printf("s = %v(%T)", s, s)
 }
