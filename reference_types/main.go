@@ -59,9 +59,12 @@ func main() {
 	fmt.Printf("s6 = %v\n", s6)
 
 	variableLengthArgumentTest("honoka", "kotori", "umi")
+
+	// スライスを可変長引数として渡すことも可能
+	variableLengthArgumentTest([]string{"nico", "maki", "eli"}...)
 }
 
 // 可変長引数はスライスとして受け取る
 func variableLengthArgumentTest(s ...string) {
-	fmt.Printf("s = %v(%T)", s, s)
+	fmt.Printf("s = %v(%T)\n", s, s)
 }
