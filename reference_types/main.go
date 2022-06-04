@@ -62,9 +62,31 @@ func main() {
 
 	// スライスを可変長引数として渡すことも可能
 	variableLengthArgumentTest([]string{"nico", "maki", "eli"}...)
+
+	// 値渡しと参照渡し、配列は値渡しでスライスは参照渡し
+	arr2 := [3]int{1, 2, 3}
+	powArray(arr2)
+	fmt.Printf("arr2 = %v\n", arr2)
+	s10 := []int{1, 2, 3}
+	powSlice(s10)
+	fmt.Printf("s10 = %v\n", s10)
 }
 
 // 可変長引数はスライスとして受け取る
 func variableLengthArgumentTest(s ...string) {
 	fmt.Printf("s = %v(%T)\n", s, s)
+}
+
+func powArray(a [3]int) {
+	for i, v := range a {
+		a[i] = v * v
+	}
+	fmt.Printf("powArray(a): %v\n", a)
+}
+
+func powSlice(s []int) {
+	for i, v := range s {
+		s[i] = v * v
+	}
+	fmt.Printf("powSlice(a): %v\n", s)
 }
