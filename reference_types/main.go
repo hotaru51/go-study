@@ -105,6 +105,26 @@ func main() {
 	// 下記のように参照することでキーが存在するか判定可能
 	nocchi, ok := m3["nocchi"]
 	fmt.Printf("nocchi = %s(%T), ok = %v(%T)\n", nocchi, nocchi, ok, ok)
+
+	// mapとfor
+	m4 := map[string]string{
+		"kanan": "Kanan Matsuura",
+		"dia": "Dia Kurosawa",
+		"hanamaru": "Hanamaru Kunikida",
+	}
+	// rangeを利用、kにキー、vに値が入る
+	// 順序性は保証されないので注意
+	for k, v := range m4 {
+		fmt.Printf("k = %s, v = %s\n", k, v)
+	}
+	// 要素数はlenで取れる
+	fmt.Printf("len(m4) = %d\n", len(m4))
+
+	// 要素の追加と削除
+	m4["yohane"] = "Yohane Tsushima?"
+	fmt.Println(m4)
+	delete(m4, "yohane")
+	fmt.Println(m4)
 }
 
 // 可変長引数はスライスとして受け取る
