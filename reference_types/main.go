@@ -125,6 +125,13 @@ func main() {
 	fmt.Println(m4)
 	delete(m4, "yohane")
 	fmt.Println(m4)
+
+	// 要素数を最適化したmap
+	// 格納される要素数が大きい場合に有効
+	cyaronMap := make(map[string]string, 100)
+	cyaronMap["you"] = "You Watanabe"
+	cyaronMap["chika"] = "Chika Takami"
+	cyaronMap["ruby"] = "Ruby Kurosawa"
 }
 
 // 可変長引数はスライスとして受け取る
