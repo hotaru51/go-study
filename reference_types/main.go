@@ -78,6 +78,33 @@ func main() {
 	)
 	fmt.Printf("arr3 = %v, s11 = %v\n", arr3, s11)
 	fmt.Printf("s11 == nil -> %v\n", s11 == nil)
+
+	// map
+	// var m map[int]string
+	// makeで生成する場合
+	m := make(map[int]string)
+	m[1] = "you"
+	m[2] = "chika"
+	m[3] = "ruby"
+	fmt.Println(m)
+
+	// 宣言と同時に初期化
+	m2 := map[string]string{
+		"yoshiko": "Yoshiko Tsushima",
+		"riko": "Riko Sakurauchi",
+		"mari": "Mari Ohara", // <- 複数行で書くときに最後のカンマが必須なので注意
+	}
+	fmt.Println(m2)
+
+	// 存在しないキーの要素を参照する場合の挙動
+	m3 := map[string]string{"kashiyuka": "Yuka Kashino"}
+	fmt.Printf("m3 = %v\n", m3)
+	// この場合、このキーの要素は存在しないため、string型の初期値の空文字が返る
+	ayaka := m3["ayaka"]
+	fmt.Printf("ayaka = %s\n", ayaka)
+	// 下記のように参照することでキーが存在するか判定可能
+	nocchi, ok := m3["nocchi"]
+	fmt.Printf("nocchi = %s(%T), ok = %v(%T)\n", nocchi, nocchi, ok, ok)
 }
 
 // 可変長引数はスライスとして受け取る
