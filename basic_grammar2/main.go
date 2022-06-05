@@ -4,6 +4,17 @@ import (
 	"fmt"
 )
 
+// 初期化用の関数を定義できる
+func init() {
+	fmt.Println("init: 1")
+}
+
+// 複数記述しても問題はない
+// 記述順に実行される
+func init() {
+	fmt.Println("init: 2")
+}
+
 func main() {
 	// for
 	// 下記は無限ループ
