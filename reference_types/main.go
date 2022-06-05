@@ -70,6 +70,14 @@ func main() {
 	s10 := []int{1, 2, 3}
 	powSlice(s10)
 	fmt.Printf("s10 = %v\n", s10)
+
+	// 配列とスライスで初期化をしない場合の初期値の違い
+	var (
+		arr3 [3]int
+		s11 []int
+	)
+	fmt.Printf("arr3 = %v, s11 = %v\n", arr3, s11)
+	fmt.Printf("s11 == nil -> %v\n", s11 == nil)
 }
 
 // 可変長引数はスライスとして受け取る
