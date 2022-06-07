@@ -39,6 +39,16 @@ func main() {
 		// バッファ内に格納されている要素数はlenで取れる
 		fmt.Printf("len(ch) = %d\n", len(ch))
 	}
+
+	close(ch)
+	// 下記のコメントを外してcloseしたチャンネルに対してデータを送信するとランタイムエラーとなる
+	// ch <- 5
+
+	// closeされたチャンネルが空であることを確認する
+	closeTestCh := make(chan int)
+	close(closeTestCh)
+	i, ok := <-closeTestCh
+	fmt.Printf("i = %d, ok = %v\n", i, ok)
 }
 
 func receiver(ch <-chan int) {
