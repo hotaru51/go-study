@@ -49,6 +49,19 @@ func main() {
 	close(closeTestCh)
 	i, ok := <-closeTestCh
 	fmt.Printf("i = %d, ok = %v\n", i, ok)
+
+	// チャンネルとfor
+	// 下記でチャンネルから値を取得できるが、クローズを検知できない
+	/*
+	forTestCh := make(chan int)
+	forTestCh <- 1
+	forTestCh <- 2
+	forTestCh <- 3
+	forTestCh <- 4
+	for i := range forTestCh {
+		fmt.Println(i)
+	}
+	*/
 }
 
 func receiver(ch <-chan int) {
