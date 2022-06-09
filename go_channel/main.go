@@ -62,6 +62,26 @@ func main() {
 		fmt.Println(i)
 	}
 	*/
+
+	// select
+	ch1 := make(chan int, 5)
+	ch2 := make(chan int, 5)
+
+	go func() {
+		for {
+			select {
+			case e1 := <-ch1:
+				fmt.Println(e1)
+			case e2 := <-ch2:
+				fmt.Println(e2)
+			}
+		}
+	}()
+
+	for i := 0; i < 10; i++ {
+		ch1 <- 11
+		ch2 <- 22
+	}
 }
 
 func receiver(ch <-chan int) {
