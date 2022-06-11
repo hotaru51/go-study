@@ -47,6 +47,9 @@ func main() {
 	fmt.Printf("len(pstrArr) = %v, cap(pstrArr) = %v, pstrArr[0:2] = %v\n",
 		len(pstrArr), cap(pstrArr), pstrArr[0:2],
 	)
+
+	// ポインタの値はprintfの%pで表示できる
+	fmt.Printf("pstrArr = %p", pstrArr)
 }
 
 func inc(i *int) {
