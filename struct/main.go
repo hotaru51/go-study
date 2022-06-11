@@ -14,6 +14,8 @@ type (
 	IntsChannel chan []int
 )
 
+type Callback func(i int) int
+
 func main() {
 	var myInt MyInt
 	myInt = 1
@@ -29,4 +31,19 @@ func main() {
 	for _, v := range ifArr {
 		fmt.Println(v)
 	}
+
+	sum([3]int{445, 874, 25}, func(res int) int {
+		fmt.Printf("callback(): res = %d\n", res)
+
+		return res
+	})
+}
+
+func sum(intArr [3]int, callback Callback) int {
+	res := 0
+	for _, v := range intArr {
+		res += v
+	}
+
+	return callback(res)
 }
