@@ -16,6 +16,19 @@ type (
 
 type Callback func(i int) int
 
+// 構造体の定義
+type Point struct {
+	X int
+	Y int
+}
+
+// 型だけの定義も可能
+type T struct {
+	int
+	float64
+	string
+}
+
 func main() {
 	var myInt MyInt
 	myInt = 1
@@ -37,8 +50,30 @@ func main() {
 
 		return res
 	})
+
+	// 構造体型の利用
+	var pt Point
+	fmt.Printf("pt.X = %d\n", pt.X)
+	fmt.Printf("pt.Y = %d\n", pt.Y)
+	pt.X = 4
+	pt.Y = 5
+	fmt.Printf("pt.X = %d\n", pt.X)
+	fmt.Printf("pt.Y = %d\n", pt.Y)
+
+	// 定義と同時に値を代入
+	pt2 := Point{1, 2}
+	pt3 := Point{X: 3, Y: 4}
+	fmt.Printf("pt2 = %v, pt3 = %v\n", pt2, pt3)
+
+	t1 := T{
+		1,
+		3.14,
+		"kotori",
+	}
+	fmt.Printf("T = %v\n", t1)
 }
 
+// callback用の関数型をエイリアスで指定
 func sum(intArr [3]int, callback Callback) int {
 	res := 0
 	for _, v := range intArr {
