@@ -5,6 +5,10 @@ import (
 )
 
 type MyInt int
+// エイリアスにメソッドを定義することも可能
+func (myInt MyInt) plus(i int) int {
+	return int(myInt) + i
+}
 
 // typeを利用した方のエイリアス
 type (
@@ -40,6 +44,14 @@ type SchoolIdle struct {
 	school string
 	grade  int
 	group  string
+}
+
+// 構造体にメソッドを追加
+func (s *SchoolIdle) printProfile() {
+	fmt.Printf("%s (age: %d)\n", s.person.name, s.person.age)
+	fmt.Printf("school: %s\n", s.school)
+	fmt.Printf("grade : %d\n", s.grade)
+	fmt.Printf("group : %s\n", s.group)
 }
 
 // 構造体をフィールド名なしで含む構造体
@@ -155,6 +167,11 @@ func main() {
 
 	// &付きで生成した場合とほぼ変わりはない
 	fmt.Printf("ruby => %T\nyoshiko => %T\nhanamaru => %T\n", ruby, yoshiko, hanamaru)
+
+	// メソッド呼び出し
+	kotori.printProfile()
+
+	fmt.Printf("myInt.plus(3) = %d\n", myInt.plus(3))
 }
 
 // callback用の関数型をエイリアスで指定
