@@ -113,6 +113,38 @@ func main() {
 	}
 	// フィールド名がない場合はアクセス時のフィールド名は不要
 	fmt.Printf("you.name = %s\n", you.name)
+
+	// 無名構造体を渡す
+	showStruct(struct{name string; grade int}{name: "Chika Takami", grade: 2})
+
+	ruby := Student{
+		Person: Person{
+			name: "Ruby Kurosawa",
+			age: 14,
+		},
+		grade: 1,
+		school: "Uranohoshi",
+	}
+	fmt.Printf("name: %s, age: %d, grade: %d\n", ruby.name, ruby.age, ruby.grade)
+	// 構造体は値型なので、promotion1では渡した値は変更されない
+	promotion1(ruby)
+	fmt.Printf("name: %s, age: %d, grade: %d\n", ruby.name, ruby.age, ruby.grade)
+	// ポインタで参照渡しすると元の変数が変更される
+	promotion2(&ruby)
+	fmt.Printf("name: %s, age: %d, grade: %d\n", ruby.name, ruby.age, ruby.grade)
+
+	// 構造体を値として渡すケースは少ないため、生成時からポインタ型で変数に格納するほうが良いかも
+	yoshiko := &Student{
+		Person: Person{
+			name: "Yoshiko Tsushima",
+			age: 14,
+		},
+		school: "Uranohoshi",
+		grade: 1,
+	}
+	fmt.Printf("name: %s, age: %d, grade: %d\n", yoshiko.name, yoshiko.age, yoshiko.grade)
+	promotion2(yoshiko)
+	fmt.Printf("name: %s, age: %d, grade: %d\n", yoshiko.name, yoshiko.age, yoshiko.grade)
 }
 
 // callback用の関数型をエイリアスで指定
@@ -123,4 +155,25 @@ func sum(intArr [3]int, callback Callback) int {
 	}
 
 	return callback(res)
+}
+
+// 無名の構造体
+func showStruct(s struct{name string; grade int}) {
+	fmt.Printf("name = %s(grade: %d)\n", s.name, s.grade)
+}
+
+func promotion1(s Student) {
+	if (s.grade < 3) {
+		s.grade++
+		s.age++
+		fmt.Printf("age: %d, grade: %d\n", s.age, s.grade)
+	}
+}
+
+func promotion2(s *Student) {
+	if (s.grade < 3) {
+		s.grade++
+		s.age++
+		fmt.Printf("age: %d, grade: %d\n", s.age, s.grade)
+	}
 }
