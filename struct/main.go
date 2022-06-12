@@ -29,6 +29,26 @@ type T struct {
 	string
 }
 
+type Person struct {
+	name  string
+	age   int
+}
+
+// 構造体を含む構造体
+type SchoolIdle struct {
+	person Person
+	school string
+	grade  int
+	group  string
+}
+
+// 構造体をフィールド名なしで含む構造体
+type Student struct {
+	Person
+	school string
+	grade int
+}
+
 func main() {
 	var myInt MyInt
 	myInt = 1
@@ -71,6 +91,28 @@ func main() {
 		"kotori",
 	}
 	fmt.Printf("T = %v\n", t1)
+
+	// 構造体をフィールド名がついてる場合とついていない場合の比較
+	kotori := SchoolIdle{
+		person: Person{
+			name: "Kotori Minami",
+			age: 16,
+		},
+		school: "Otonokizaka",
+		grade: 2,
+		group: "μ's",
+	}
+	fmt.Printf("kotori.person.name = %s\n", kotori.person.name)
+	you := Student{
+		Person: Person{
+			name: "You Watanabe",
+			age: 16,
+		},
+		school: "Uranohoshi",
+		grade: 2,
+	}
+	// フィールド名がない場合はアクセス時のフィールド名は不要
+	fmt.Printf("you.name = %s\n", you.name)
 }
 
 // callback用の関数型をエイリアスで指定
