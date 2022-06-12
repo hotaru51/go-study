@@ -145,6 +145,16 @@ func main() {
 	fmt.Printf("name: %s, age: %d, grade: %d\n", yoshiko.name, yoshiko.age, yoshiko.grade)
 	promotion2(yoshiko)
 	fmt.Printf("name: %s, age: %d, grade: %d\n", yoshiko.name, yoshiko.age, yoshiko.grade)
+
+	// newによる値生成
+	hanamaru := new(Student)
+	hanamaru.name = "Hanamaru Kunikida"
+	hanamaru.age = 14
+	hanamaru.school = "Uranohoshi"
+	hanamaru.grade = 2
+
+	// &付きで生成した場合とほぼ変わりはない
+	fmt.Printf("ruby => %T\nyoshiko => %T\nhanamaru => %T\n", ruby, yoshiko, hanamaru)
 }
 
 // callback用の関数型をエイリアスで指定
