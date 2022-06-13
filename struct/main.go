@@ -54,6 +54,16 @@ func (s *SchoolIdle) printProfile() {
 	fmt.Printf("group : %s\n", s.group)
 }
 
+// コンストラクタ的なやつ
+// NewXXXの様に命名する
+func NewPerson(name string, age int) *Person {
+	person := new(Person)
+	person.name = name
+	person.age  = age
+
+	return person
+}
+
 // 構造体をフィールド名なしで含む構造体
 type Student struct {
 	Person
@@ -172,6 +182,9 @@ func main() {
 	kotori.printProfile()
 
 	fmt.Printf("myInt.plus(3) = %d\n", myInt.plus(3))
+
+	ksyk := NewPerson("Yuka Kashino", 33)
+	fmt.Println(ksyk)
 }
 
 // callback用の関数型をエイリアスで指定
