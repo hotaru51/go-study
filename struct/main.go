@@ -26,6 +26,12 @@ type Point struct {
 	Y int
 }
 
+// メソッドのレシーバを値型にしたときの挙動
+func (p Point) setPoint(x int, y int) {
+	p.X = x
+	p.Y = y
+}
+
 // 型だけの定義も可能
 type T struct {
 	int
@@ -185,6 +191,15 @@ func main() {
 
 	ksyk := NewPerson("Yuka Kashino", 33)
 	fmt.Println(ksyk)
+
+	// レシーバが値型だと、メソッド実行時はレシーバのコピーが作成されるため、pt4自体の値は変化しない
+	pt4 := Point{}
+	pt4.setPoint(1, 2)
+	fmt.Printf("pt4 = %v\n", pt4)
+	// pt5のようにポインタ型で生成しても同様
+	pt5 := &Point{}
+	pt5.setPoint(3, 4)
+	fmt.Printf("pt5 = %v\n", pt5)
 }
 
 // callback用の関数型をエイリアスで指定
