@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"./foo"
 )
 
 type MyInt int
@@ -200,8 +201,15 @@ func main() {
 	pt5 := &Point{}
 	pt5.setPoint(3, 4)
 	fmt.Printf("pt5 = %v\n", pt5)
-}
 
+	// フィールドやメソッドの可視性
+	f := &foo.Foo{}
+	fmt.Println(f.Field1)
+	fmt.Println(f.FooMethod1())
+	// 下記はコンパイルエラー
+	// fmt.Println(f.field2)
+	// fmt.Println(f.fooMethod2())
+}
 // callback用の関数型をエイリアスで指定
 func sum(intArr [3]int, callback Callback) int {
 	res := 0
