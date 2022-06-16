@@ -209,6 +209,12 @@ func main() {
 	// 下記はコンパイルエラー
 	// fmt.Println(f.field2)
 	// fmt.Println(f.fooMethod2())
+
+	// スライスと構造体
+	pointSlice := make([]Point, 5)
+	for i, v := range pointSlice {
+		fmt.Printf("v[%d].X = %d, v[%d].Y = %d\n", i, v.X, i, v.Y)
+	}
 }
 // callback用の関数型をエイリアスで指定
 func sum(intArr [3]int, callback Callback) int {
