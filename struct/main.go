@@ -45,6 +45,9 @@ type Person struct {
 	age   int
 }
 
+// 複雑な型をエイリアスで定義してしまう
+type People []*Person
+
 // 構造体を含む構造体
 type SchoolIdle struct {
 	person Person
@@ -214,6 +217,14 @@ func main() {
 	pointSlice := make([]Point, 5)
 	for i, v := range pointSlice {
 		fmt.Printf("v[%d].X = %d, v[%d].Y = %d\n", i, v.X, i, v.Y)
+	}
+
+	otonokizaka := People{}
+	otonokizaka = append(otonokizaka, &Person{name: "Honoka Kousaka", age: 16})
+	otonokizaka = append(otonokizaka, &Person{name: "Kotori Minami", age: 16})
+	otonokizaka = append(otonokizaka, &Person{name: "Umi Sonoda", age: 16})
+	for _, v := range otonokizaka {
+		fmt.Printf("name: %s, age: %d\n", v.name, v.age)
 	}
 }
 // callback用の関数型をエイリアスで指定
