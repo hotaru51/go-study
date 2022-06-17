@@ -13,7 +13,7 @@ func main() {
 	// 要素数を調べる
 	fmt.Printf("len(s) = %d\n", len(s))
 
-	// 要素数5、容量10のすらいすを生成
+	// 要素数5、容量10のスライスを生成
 	s1 := make([]int, 5, 10)
 	fmt.Printf("len(s1) = %d, cap(s1) = %d\n", len(s1), cap(s1))
 
