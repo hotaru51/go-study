@@ -226,6 +226,17 @@ func main() {
 	for _, v := range otonokizaka {
 		fmt.Printf("name: %s, age: %d\n", v.name, v.age)
 	}
+
+	// 構造体をキーとするmapの場合、若干省略した形で初期化することが可能
+	m1 := map[Person]string{
+		{name: "Honoka", age: 16}: "Otonokizaka",
+		{name: "You", age: 16}: "Uranohoshi",
+		{name: "Shizuku", age: 15}: "Nijigasaki",
+		{name: "Kanon", age: 15}: "Yuigaoka",
+	}
+	for k, v := range m1 {
+		fmt.Printf("person: %v, school: %s\n", k, v)
+	}
 }
 // callback用の関数型をエイリアスで指定
 func sum(intArr [3]int, callback Callback) int {
