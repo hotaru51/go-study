@@ -41,8 +41,8 @@ type T struct {
 }
 
 type Person struct {
-	name  string
-	age   int
+	name  string	"名前" // 構造体のフィールドにタグを付与
+	age   int		"年齢"
 }
 
 // 複雑な型をエイリアスで定義してしまう
