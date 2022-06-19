@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"./foo"
 )
 
@@ -236,6 +237,14 @@ func main() {
 	}
 	for k, v := range m1 {
 		fmt.Printf("person: %v, school: %s\n", k, v)
+	}
+
+	// reflectパッケージでタグを参照する
+	person1 := Person{name: "You Watanabe", age: 16}
+	tp := reflect.TypeOf(person1)
+	for i := 0; i < tp.NumField(); i++ {
+		f := tp.Field(i)
+		fmt.Println(f.Name, f.Tag)
 	}
 }
 // callback用の関数型をエイリアスで指定
