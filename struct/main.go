@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"encoding/json"
+
 	"./foo"
 )
 
@@ -80,6 +82,13 @@ type Student struct {
 	Person
 	school string
 	grade int
+}
+
+// タグを利用してJSONに変換したときのキー指定する
+type User struct {
+	Id		int		`json:"UserId"`
+	Name	string	`json:"UserName"`
+	Age		int		`json:"UserAge"`
 }
 
 func main() {
@@ -246,6 +255,10 @@ func main() {
 		f := tp.Field(i)
 		fmt.Println(f.Name, f.Tag)
 	}
+
+	u := &User{Id: 445, Name: "Yoshiko Tsushima", Age: 15}
+	bs, _ := json.Marshal(u)
+	fmt.Println(string(bs))
 }
 // callback用の関数型をエイリアスで指定
 func sum(intArr [3]int, callback Callback) int {
