@@ -36,6 +36,17 @@ type Product struct {
 	Price int
 }
 
+type SchoolIdle struct {
+	Name   string
+	School string
+	Group  string
+}
+
+// fmt.StringerインターフェースのString()メソッドの実装
+func (s *SchoolIdle) String() string {
+	return fmt.Sprintf("Name: %s, School: %s, Group: %s", s.Name, s.School, s.Group)
+}
+
 func (p *Product) ToString() string {
 	return fmt.Sprintf("Name: %s, Price: %d", p.Name, p.Price)
 }
@@ -66,5 +77,14 @@ func main() {
 	stringifyArr := [2]Stringify{person1, product1}
 	for _, v := range stringifyArr {
 		fmt.Println(v.ToString())
+	}
+
+	idleArr := [3]*SchoolIdle{
+		{Name: "Honoka Kousaka", School: "Otonokizaka", Group: "μ's"},
+		{Name: "Chika Takami", School: "Uranohoshi", Group: "Aqours"},
+		{Name: "Ayumu Uehara", School: "Nijigasaki", Group: "Nijigasaki high school idle club"},
+	}
+	for _, v := range idleArr {
+		fmt.Println(v)
 	}
 }
