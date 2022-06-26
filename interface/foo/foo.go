@@ -19,3 +19,18 @@ func (t *T) Method1() string {
 func (t *T) method2() string {
 	return fmt.Sprint("method2()")
 }
+
+type I0 interface {
+	Method1() string
+}
+
+// インターフェースの入れ子も可能
+type I1 interface {
+	I0
+	Method2() string
+}
+
+type I2 interface {
+	I1
+	Method3() string
+}
