@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"./foo"
 )
 
 type MyError struct {
@@ -87,4 +88,10 @@ func main() {
 	for _, v := range idleArr {
 		fmt.Println(v)
 	}
+
+	t := &foo.T{}
+	// foo.Method1()はアクセス可能
+	fmt.Println(t.Method1())
+	// foo.method2()はアクセス不可
+	// fmt.Println(t.method2())
 }
