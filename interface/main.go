@@ -38,9 +38,20 @@ type Product struct {
 }
 
 type SchoolIdle struct {
+	Id     int
 	Name   string
 	School string
 	Group  string
+}
+
+// Idを返すGetId()を実装
+func (s *SchoolIdle) GetId() int {
+	return s.Id
+}
+
+// インターフェースを利用して、intを返すGetId()をものを引数として受け付ける
+func ShowId(id interface { GetId() int }) {
+	fmt.Printf("ID: %d\n", id.GetId())
 }
 
 // fmt.StringerインターフェースのString()メソッドの実装
@@ -94,4 +105,13 @@ func main() {
 	fmt.Println(t.Method1())
 	// foo.method2()はアクセス不可
 	// fmt.Println(t.method2())
+
+	// SchoolIdle型はGetId()を持つので、ShowId()の引数として渡すことができる
+	s1 := &SchoolIdle{
+		Id: 1,
+		Name: "Chika Takami",
+		School: "Uranohoshi",
+		Group: "Aqours",
+	}
+	ShowId(s1)
 }
