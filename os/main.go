@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"log"
 )
 
 func main() {
@@ -10,6 +11,11 @@ func main() {
 	defer func() {
 		fmt.Println("defer")
 	}()
+
+	_, err := os.Open("hoge")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	os.Exit(0)
 }
