@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	"log"
+	// "log"
 )
 
 func main() {
@@ -12,9 +12,17 @@ func main() {
 		fmt.Println("defer")
 	}()
 
+	/*
+	// 存在しないファイルを開こうとした場合にエラーメッセージを出力
 	_, err := os.Open("hoge")
 	if err != nil {
 		log.Fatal(err)
+	}
+	*/
+
+	// コマンドライン引数はos.Args[]で参照できる
+	for i, v := range os.Args {
+		fmt.Printf("os.Args[%d] = \"%s\"\n", i, v)
 	}
 
 	os.Exit(0)
