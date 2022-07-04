@@ -2,14 +2,20 @@ package main
 
 import (
 	"fmt"
-	"bufio"
 	"os"
+	"io/ioutil"
+
+	"golang.org/x/term"
 )
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Printf("os.Stdin.Fd() = %v\n", os.Stdin.Fd())
-	for scanner.Scan() {
-		fmt.Println(string(scanner.Bytes()))
+	if term.IsTerminal(0) {
+		fmt.Println("terminal")
+	} else {
+		fmt.Println("pipe")
+		data, err := ioutil.ReadAll(os.Stdin); if err != nil {
+			fmt.Println(err)
+		}
+		fmt.Print(string(data))
 	}
 }
