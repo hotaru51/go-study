@@ -36,5 +36,14 @@ func main() {
 
 	openFile("./uranohoshi.txt")
 
+	// 環境変数を参照する
+	fmt.Println(os.Getenv("PATH"))
+	// 存在しない場合は空文字
+	fmt.Printf("%#v\n", os.Getenv("HOGE"))
+
+	// 実行ファイルの絶対パス取得
+	executablePath, _ := os.Executable()
+	fmt.Println(executablePath)
+
 	os.Exit(0)
 }
