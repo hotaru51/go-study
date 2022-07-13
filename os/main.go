@@ -45,5 +45,14 @@ func main() {
 	executablePath, _ := os.Executable()
 	fmt.Println(executablePath)
 
+	// 新規ファイルの作成
+	newf, _ := os.Create("otonokizaka.txt")
+	fs, _ := newf.Stat()
+	fmt.Println(fs.Name())
+	fmt.Println(fs.Size())
+	fmt.Println(fs.IsDir())
+	// ファイルに[]byte型を書き込み
+	newf.Write([]byte("Honoka Kousaka\n"))
+
 	os.Exit(0)
 }
