@@ -54,5 +54,8 @@ func main() {
 	// ファイルに[]byte型を書き込み
 	newf.Write([]byte("Honoka Kousaka\n"))
 
+	// パーミッション等を指定してファイルオープン
+	os.OpenFile("./nijigasaki.txt", os.O_CREATE, 0600)
+
 	os.Exit(0)
 }
