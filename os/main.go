@@ -57,5 +57,11 @@ func main() {
 	// パーミッション等を指定してファイルオープン
 	os.OpenFile("./nijigasaki.txt", os.O_CREATE, 0600)
 
+	// ファイルの削除
+	err = os.Remove("./kasukasu.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
+
 	os.Exit(0)
 }
