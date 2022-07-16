@@ -63,5 +63,11 @@ func main() {
 		fmt.Println(err)
 	}
 
+	// ファイルを含むディレクトリを削除する場合はos.RemoveAllを使用する
+	err = os.RemoveAll("./yohane_dir")
+	if err != nil {
+		fmt.Println(err)
+	}
+
 	os.Exit(0)
 }
