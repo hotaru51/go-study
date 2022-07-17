@@ -69,5 +69,9 @@ func main() {
 		fmt.Println(err)
 	}
 
+	// ファイル名の変更
+	os.Create("./yohane.txt")
+	os.Rename("./yohane.txt", "./yoshiko.txt")
+
 	os.Exit(0)
 }
