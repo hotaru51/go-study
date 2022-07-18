@@ -79,5 +79,18 @@ func main() {
 	}
 	fmt.Println(dir)
 
+	// ディレクトリを開く
+	d1, err := os.Open("."); if err != nil {
+		fmt.Println(err)
+	}
+
+	// 開いたディレクトリの内容を取得
+	fdir, err := d1.ReadDir(0)
+
+	// ディレクトリ内のファイル名をすべて表示する
+	for _, f := range fdir {
+		fmt.Println(f.Name())
+	}
+
 	os.Exit(0)
 }
