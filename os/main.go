@@ -73,5 +73,11 @@ func main() {
 	os.Create("./yohane.txt")
 	os.Rename("./yohane.txt", "./yoshiko.txt")
 
+	// カレントディレクトリの取得
+	dir, err := os.Getwd(); if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(dir)
+
 	os.Exit(0)
 }
