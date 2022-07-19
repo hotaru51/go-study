@@ -92,5 +92,8 @@ func main() {
 		fmt.Println(f.Name())
 	}
 
+	// システムのテンポラリディレクトリの取得
+	fmt.Println(os.TempDir())
+
 	os.Exit(0)
 }
