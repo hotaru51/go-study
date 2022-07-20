@@ -95,5 +95,8 @@ func main() {
 	// システムのテンポラリディレクトリの取得
 	fmt.Println(os.TempDir())
 
+	// シンボリックリンクの作成
+	err = os.Symlink("./uranohoshi.txt", "./aqours.txt")
+
 	os.Exit(0)
 }
