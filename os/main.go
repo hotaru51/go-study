@@ -98,5 +98,11 @@ func main() {
 	// シンボリックリンクの作成
 	err = os.Symlink("./uranohoshi.txt", "./aqours.txt")
 
+	// シンボリックリンク先のファイルのパスを読み込む
+	sp, err := os.Readlink("./aqours.txt"); if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(sp)
+
 	os.Exit(0)
 }
