@@ -41,6 +41,13 @@ func main() {
 	// 存在しない場合は空文字
 	fmt.Printf("%#v\n", os.Getenv("HOGE"))
 
+	// 厳密に環境変数が存在するかチェックする場合はos.LookupEnv()を使用する
+	if testEnv, ok := os.LookupEnv("test_env"); ok {
+		fmt.Println(testEnv)
+	} else {
+		fmt.Println("no $test_env")
+	}
+
 	// 実行ファイルの絶対パス取得
 	executablePath, _ := os.Executable()
 	fmt.Println(executablePath)
