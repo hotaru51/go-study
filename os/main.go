@@ -48,6 +48,21 @@ func main() {
 		fmt.Println("no $test_env")
 	}
 
+	// 環境変数の設定、削除
+	// 定義していない状態
+	testEnv := os.Getenv("test_env")
+	fmt.Printf("$test_env=%#v\n", testEnv)
+
+	// test_envを定義
+	os.Setenv("test_env", "lovelive")
+	testEnv = os.Getenv("test_env")
+	fmt.Printf("$test_env=%#v\n", testEnv)
+
+	// test_envを削除
+	os.Unsetenv("test_env")
+	testEnv = os.Getenv("test_env")
+	fmt.Printf("$test_env=%#v\n", testEnv)
+
 	// 実行ファイルの絶対パス取得
 	executablePath, _ := os.Executable()
 	fmt.Println(executablePath)
