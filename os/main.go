@@ -126,5 +126,8 @@ func main() {
 	}
 	fmt.Println(sp)
 
+	// プロセスIDの取得
+	fmt.Printf("プロセスID: %d, 親プロセスID: %d\n", os.Getpid(), os.Getppid())
+
 	os.Exit(0)
 }
