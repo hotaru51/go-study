@@ -129,5 +129,9 @@ func main() {
 	// プロセスIDの取得
 	fmt.Printf("プロセスID: %d, 親プロセスID: %d\n", os.Getpid(), os.Getppid())
 
+	// ユーザID、グループIDの取得
+	fmt.Printf("ユーザID: %d, 実効ユーザID: %d\n", os.Geteuid(), os.Geteuid())
+	fmt.Printf("グループID: %d, 実効グループID: %d\n", os.Getgid(), os.Getegid())
+
 	os.Exit(0)
 }
