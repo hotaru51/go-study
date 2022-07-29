@@ -27,4 +27,17 @@ func main() {
 		fmt.Println(t.Minute())
 		fmt.Println(t.Second())
 	}
+
+	// 時刻の間隔の表現
+	{
+		// 4時間45分を文字列から生成
+		d, _ := time.ParseDuration("4h45m")
+		fmt.Println(d)
+
+		// 現在から4時間45分後を生成
+		t := time.Now()
+		fmt.Printf("現在時刻        : %v\n", t)
+		t = t.Add(d)
+		fmt.Printf("現在時刻 + 4h45m: %v\n", t)
+	}
 }
