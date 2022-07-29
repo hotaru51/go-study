@@ -19,6 +19,10 @@ func main() {
 		// 下記のようにすると4が返される
 		// fmt.Println(int(t.Month()))
 		fmt.Println(t.Day())
+		// 曜日も月と同様、time.Weekday型が存在する
+		fmt.Println(t.Weekday())
+		// 日曜日なので0が返される
+		// fmt.Println(int(t.Weekday()))
 		fmt.Println(t.Hour())
 		fmt.Println(t.Minute())
 		fmt.Println(t.Second())
