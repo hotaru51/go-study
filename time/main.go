@@ -40,4 +40,11 @@ func main() {
 		t = t.Add(d)
 		fmt.Printf("現在時刻 + 4h45m: %v\n", t)
 	}
+
+	// 時刻の差分の取得
+	{
+		ybd := time.Date(2023, 4, 17, 0, 0, 0, 0, time.Local)
+		now := time.Now()
+		fmt.Println(ybd.Sub(now))
+	}
 }
