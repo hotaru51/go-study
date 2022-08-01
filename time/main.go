@@ -43,8 +43,20 @@ func main() {
 
 	// 時刻の差分の取得
 	{
-		ybd := time.Date(2023, 4, 17, 0, 0, 0, 0, time.Local)
+		ybd := time.Date(2022, 4, 17, 0, 0, 0, 0, time.Local)
 		now := time.Now()
 		fmt.Println(ybd.Sub(now))
+	}
+
+	// 日付を比較する
+	{
+		t1 := time.Date(2022, 4, 17, 0, 0, 0, 0, time.Local)
+		t2 := time.Date(2022, 8, 1, 0, 0, 0, 0, time.Local)
+		fmt.Printf("t1 = %#v\n", t1)
+		fmt.Printf("t2 = %#v\n", t2)
+		fmt.Printf("t1 < t2 => %#v\n", t1.Before(t2))
+		fmt.Printf("t1 > t2 => %#v\n", t1.After(t2))
+		fmt.Printf("t2 < t1 => %#v\n", t2.Before(t1))
+		fmt.Printf("t2 > t1 => %#v\n", t2.After(t1))
 	}
 }
