@@ -59,4 +59,12 @@ func main() {
 		fmt.Printf("t2 < t1 => %#v\n", t2.Before(t1))
 		fmt.Printf("t2 > t1 => %#v\n", t2.After(t1))
 	}
+
+	// 日付の増減
+	{
+		t := time.Date(2022, 3, 20, 0, 0, 0, 0, time.Local)
+		fmt.Println(t)
+		t = t.AddDate(0, 1, -3)
+		fmt.Println(t)
+	}
 }
