@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"time"
 )
 
@@ -66,5 +67,22 @@ func main() {
 		fmt.Println(t)
 		t = t.AddDate(0, 1, -3)
 		fmt.Println(t)
+	}
+
+	// 文字列から時刻を生成する
+	{
+		// 第一引数がフォーマット代わり
+		if t, err := time.Parse("2006/01/02", "2022/08/01"); err != nil {
+			log.Fatal(err)
+		} else {
+			fmt.Println(t)
+		}
+
+		// フォーマットは定数でも用意されている
+		if t, err := time.Parse(time.RFC3339, "2022-04-17T00:00:00+09:00"); err != nil {
+			log.Fatal(err)
+		} else {
+			fmt.Println(t)
+		}
 	}
 }
