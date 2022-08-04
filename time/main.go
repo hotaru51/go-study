@@ -83,6 +83,9 @@ func main() {
 			log.Fatal(err)
 		} else {
 			fmt.Println(t)
+			// 時刻をUTCに変換する
+			utc := t.UTC()
+			fmt.Println(utc)
 		}
 	}
 }
