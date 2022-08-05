@@ -86,6 +86,17 @@ func main() {
 			// 時刻をUTCに変換する
 			utc := t.UTC()
 			fmt.Println(utc)
+			// 時刻をローカルタイムに変換する
+			l := utc.Local()
+			fmt.Println(l)
+
+			// 時刻をUNIX時間に変換する
+			unix := l.Unix()
+			fmt.Println(unix)
 		}
+
+		// UNIX時間を時刻に変換する
+		t := time.Unix(1650445745, 0)
+		fmt.Println(t)
 	}
 }
