@@ -99,4 +99,8 @@ func main() {
 		t := time.Unix(1650445745, 0)
 		fmt.Println(t)
 	}
+
+	// sleepを入れる
+	fmt.Println("sleep 2s")
+	time.Sleep(2 * time.Second)
 }
