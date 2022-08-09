@@ -103,4 +103,11 @@ func main() {
 	// sleepを入れる
 	fmt.Println("sleep 2s")
 	time.Sleep(2 * time.Second)
+
+	// 指定時間後に時刻を生成するチャネル
+	{
+		fmt.Println(time.Now())
+		ch := time.After(5 * time.Second)
+		fmt.Println(<-ch)
+	}
 }
