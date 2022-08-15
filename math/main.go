@@ -15,4 +15,8 @@ func main() {
 	fmt.Printf("MaxFloat32 = %v\n", math.MaxFloat32)
 	fmt.Printf("MaxInt64 = %v\n", math.MaxInt64)
 	fmt.Printf("MaxFloat64 = %v\n", math.MaxFloat64)
+
+	// 絶対値を求める
+	fmt.Printf("math.Abs(3.14) = %f\n", math.Abs(3.14))
+	fmt.Printf("math.Abs(-3.14) = %f\n", math.Abs(-3.14))
 }
