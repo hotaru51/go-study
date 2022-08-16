@@ -19,4 +19,10 @@ func main() {
 	// 絶対値を求める
 	fmt.Printf("math.Abs(3.14) = %f\n", math.Abs(3.14))
 	fmt.Printf("math.Abs(-3.14) = %f\n", math.Abs(-3.14))
+
+	// 累乗を求める
+	fmt.Printf("math.Pow(2, 8) = %f\n", math.Pow(2, 8))
+
+	// 平方根
+	fmt.Printf("math.Sqrt(4) = %f\n", math.Sqrt(4))
 }
