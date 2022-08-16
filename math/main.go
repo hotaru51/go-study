@@ -25,4 +25,10 @@ func main() {
 
 	// 平方根
 	fmt.Printf("math.Sqrt(4) = %f\n", math.Sqrt(4))
+
+	// 最大値と最小値
+	ysk := 445
+	nsk := 745
+	fmt.Printf("math.Max(ysk, nsk) = %f\n", math.Max(float64(ysk), float64(nsk)))
+	fmt.Printf("math.Min(ysk, nsk) = %f\n", math.Min(float64(ysk), float64(nsk)))
 }
