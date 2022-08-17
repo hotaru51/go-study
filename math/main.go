@@ -31,4 +31,8 @@ func main() {
 	nsk := 745
 	fmt.Printf("math.Max(ysk, nsk) = %f\n", math.Max(float64(ysk), float64(nsk)))
 	fmt.Printf("math.Min(ysk, nsk) = %f\n", math.Min(float64(ysk), float64(nsk)))
+
+	// 小数点の切り捨て
+	fmt.Printf("math.Trunc(1.5) = %f\n", math.Trunc(1.5))
+	fmt.Printf("math.Trunc(-1.5) = %f\n", math.Trunc(-1.5))
 }
