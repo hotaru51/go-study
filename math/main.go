@@ -35,4 +35,12 @@ func main() {
 	// 小数点の切り捨て
 	fmt.Printf("math.Trunc(1.5) = %f\n", math.Trunc(1.5))
 	fmt.Printf("math.Trunc(-1.5) = %f\n", math.Trunc(-1.5))
+
+	// 与えた数値より小さい整数を返す
+	fmt.Printf("math.Floor(1.5) = %f\n", math.Floor(1.5))
+	fmt.Printf("math.Floor(-1.5) = %f\n", math.Floor(-1.5))
+
+	// 与えた数値より大きい整数を返す
+	fmt.Printf("math.Ceil(1.5) = %f\n", math.Ceil(1.5))
+	fmt.Printf("math.Ceil(-1.5) = %f\n", math.Ceil(-1.5))
 }
