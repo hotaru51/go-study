@@ -47,4 +47,8 @@ func main() {
 	// 非数と非数の確認
 	fmt.Printf("math.Sqrt(-1) = %v\n", math.Sqrt(-1))
 	fmt.Printf("math.IsNaN(math.Sqrt(-1)) = %v\n", math.IsNaN(math.Sqrt(-1)))
+
+	// 無限大と負の無限大
+	fmt.Printf("math.Inf(0) = %v\n", math.Inf(0))
+	fmt.Printf("math.Inf(-1) = %v\n", math.Inf(-1))
 }
