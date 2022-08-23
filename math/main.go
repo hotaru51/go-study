@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/rand"
+	"time"
 )
 
 func main() {
@@ -51,4 +53,12 @@ func main() {
 	// 無限大と負の無限大
 	fmt.Printf("math.Inf(0) = %v\n", math.Inf(0))
 	fmt.Printf("math.Inf(-1) = %v\n", math.Inf(-1))
+
+	// 乱数の生成
+	rand.Seed(256)
+	fmt.Printf("rand.Float64() = %f\n", rand.Float64())
+	// シードの設定に現在時刻を使う
+	rand.Seed(time.Now().UnixNano())
+	// 0〜99の乱数を返す
+	fmt.Printf("rand.Intn(100) = %d\n", rand.Intn(100))
 }
