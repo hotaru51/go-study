@@ -61,4 +61,12 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 	// 0〜99の乱数を返す
 	fmt.Printf("rand.Intn(100) = %d\n", rand.Intn(100))
+
+	// 擬似乱数生成器の生成
+	// 疑似乱数生成器のソースを生成
+	rndSrc := rand.NewSource(time.Now().UnixNano())
+	// ソースを元に疑似乱数生成器を生成
+	myRnd := rand.New(rndSrc)
+	// 生成した擬似乱数生成器を使用して乱数を生成
+	fmt.Printf("myRnd.Intn(100) = %d\n", myRnd.Intn(100))
 }
