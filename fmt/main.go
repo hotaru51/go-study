@@ -21,4 +21,19 @@ func main() {
 	fmt.Printf("\"%10.3f\"\n", 1.8742525)
 	// 上記の左詰め版
 	fmt.Printf("\"%-10.3f\"\n", 1.8742525)
+
+	// 文字数で右詰め
+	fmt.Printf("\"%10s\"\n", "南ことり")
+	// 文字数で左詰め
+	fmt.Printf("\"%10s\"\n", "南ことり")
+	// ""付き
+	fmt.Printf("\"%q\"\n", "南ことり")
+
+	// bool型専用
+	fmt.Printf("%t\n", true)
+	// ポインタ型専用
+	you := "You Watanabe"
+	fmt.Printf("%p\n", &you)
+	// データ型
+	fmt.Printf("%T\n", &you)
 }
