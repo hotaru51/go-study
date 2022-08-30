@@ -4,6 +4,11 @@ import (
 	"fmt"
 )
 
+type User struct {
+	Name string
+	Age int
+}
+
 func main() {
 	// fmt.Printf()で%を表示する場合は%%を使用する
 	fmt.Printf("%%\n")
@@ -36,4 +41,15 @@ func main() {
 	fmt.Printf("%p\n", &you)
 	// データ型
 	fmt.Printf("%T\n", &you)
+
+	u1 := &User {
+		Name: "Chika Takami",
+		Age: 16,
+	}
+	// %vは様々なデータ型に対応
+	fmt.Printf("%v\n", u1)
+	// %+vの場合は構造体のフィールド名も含まれる
+	fmt.Printf("%+v\n", u1)
+	// %#vの場合はデータ型も含まれる
+	fmt.Printf("%#v\n", u1)
 }
