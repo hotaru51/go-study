@@ -13,4 +13,21 @@ func main() {
 	// デフォルトでは標準エラー出力になるので、標準出力に変更する
 	log.SetOutput(os.Stdout)
 	log.Println("stdout")
+
+	// ログのフォーマットを指定する
+	sampleText := "log test"
+	// 標準
+	log.SetFlags(log.LstdFlags)
+	log.Println(sampleText)
+	// マイクロ秒追加
+	log.SetFlags(log.Ldate | log.Ltime | log.Lmicroseconds)
+	log.Println(sampleText)
+	// 時刻とファイルの行番号
+	log.SetFlags(log.Ltime | log.Lshortfile)
+	log.Println(sampleText)
+
+	log.SetFlags(log.LstdFlags)
+	// プレフィックスを設定する
+	log.SetPrefix("[log] ")
+	log.Println(sampleText)
 }
