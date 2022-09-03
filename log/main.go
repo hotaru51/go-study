@@ -30,4 +30,8 @@ func main() {
 	// プレフィックスを設定する
 	log.SetPrefix("[log] ")
 	log.Println(sampleText)
+
+	// ロガーの生成
+	logger := log.New(os.Stdout, "[log] ", log.LstdFlags)
+	logger.Println("my logger")
 }
