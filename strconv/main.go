@@ -23,4 +23,16 @@ func main() {
 	fmt.Printf("strf1 = %s\n", strf1)
 	strf2 := strconv.FormatFloat(f, 'g', -1, 64)
 	fmt.Printf("strf2 = %s\n", strf2)
+
+	// string -> bool
+	tList := []string{"true", "1", "t", "T", "TRUE", "True"}
+	for _, str := range(tList) {
+		b, err := strconv.ParseBool(str)
+		fmt.Printf("str, b, err = %s, %t, %v\n", str, b, err)
+	}
+	fList := []string{"false", "0", "f", "F", "FALSE", "False"}
+	for _, str := range(fList) {
+		b, err := strconv.ParseBool(str)
+		fmt.Printf("str, b, err = %s, %t, %v\n", str, b, err)
+	}
 }
