@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"strconv"
 )
 
@@ -34,5 +35,21 @@ func main() {
 	for _, str := range(fList) {
 		b, err := strconv.ParseBool(str)
 		fmt.Printf("str, b, err = %s, %t, %v\n", str, b, err)
+	}
+
+	// string -> int
+	shanayo := "874"
+	ihanayo, err := strconv.ParseInt(shanayo, 10, 0); if err != nil {
+		log.Println(err)
+	} else {
+		fmt.Printf("ihanayo = %d\n", ihanayo)
+	}
+
+	// string -> float
+	snico := "25.2"
+	fnico, err := strconv.ParseFloat(snico, 64); if err != nil {
+		log.Println(err)
+	} else {
+		fmt.Printf("fnico = %.2f\n", fnico)
 	}
 }
