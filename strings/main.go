@@ -22,4 +22,10 @@ func main() {
 	fmt.Printf("IndexAny(\"ABCDEABCD\", \"CDE\") = %d\n", strings.IndexAny("ABCDEABCD", "CDE"))
 	//IndexAnyの最後に見つかる方版
 	fmt.Printf("LastIndexAny(\"ABCDEABCD\", \"CDE\") = %d\n", strings.LastIndexAny("ABCDEABCD", "CDE"))
+
+	// 指定した文字列で始まる/終わるか検証する
+	fmt.Printf("HasPrefix(\"ことほのうみ\", \"こと\") = %t\n", strings.HasPrefix("ことほのうみ", "こと"))
+	fmt.Printf("HasPrefix(\"ことほのうみ\", \"ほの\") = %t\n", strings.HasPrefix("ことほのうみ", "ほの"))
+	fmt.Printf("HasSuffix(\"ことほのうみ\", \"うみ\") = %t\n", strings.HasSuffix("ことほのうみ", "うみ"))
+	fmt.Printf("HasSuffix(\"ことほのうみ\", \"ほの\") = %t\n", strings.HasSuffix("ことほのうみ", "ほの"))
 }
