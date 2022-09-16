@@ -39,4 +39,9 @@ func main() {
 	fmt.Printf("ContainsAny(\"XYZ\", \"XY\") = %t\n", strings.ContainsAny("XYZ", "XY"))
 	fmt.Printf("ContainsAny(\"XYZ\", \"YOSHIKO\") = %t\n", strings.ContainsAny("XYZ", "YOSHIKO"))
 	fmt.Printf("ContainsAny(\"XYZ\", \"HANAMARU\") = %t\n", strings.ContainsAny("XYZ", "HANAMARU"))
+
+	// 指定した文字列が何回出現するか検索する
+	fmt.Printf("Count(\"ABCABCABCABC\", \"ABC\") = %d\n", strings.Count("ABCABCABCABC", "ABC"))
+	fmt.Printf("Count(\"ABCABCABCABC\", \"XYZ\") = %d\n", strings.Count("ABCABCABCABC", "XYZ"))
+	fmt.Printf("Count(\"ABC\", \"\") = %d\n", strings.Count("ABC", ""))
 }
