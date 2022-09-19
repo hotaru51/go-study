@@ -44,4 +44,14 @@ func main() {
 	fmt.Printf("Count(\"ABCABCABCABC\", \"ABC\") = %d\n", strings.Count("ABCABCABCABC", "ABC"))
 	fmt.Printf("Count(\"ABCABCABCABC\", \"XYZ\") = %d\n", strings.Count("ABCABCABCABC", "XYZ"))
 	fmt.Printf("Count(\"ABC\", \"\") = %d\n", strings.Count("ABC", ""))
+
+	// 文字列を繰り返して結合する
+	fmt.Printf("Repeat(\"nico\", 4) = %s\n", strings.Repeat("nico", 4))
+	fmt.Printf("Repeat(\"nico\", 0) = %s\n", strings.Repeat("nico", 0))
+
+	// 文字列の置換
+	fmt.Printf("Replace(\"AAAAA\", \"A\", \"X\", 1) = %s\n", strings.Replace("AAAAA", "A", "X", 1))
+	fmt.Printf("Replace(\"AAAAA\", \"A\", \"X\", 3) = %s\n", strings.Replace("AAAAA", "A", "X", 3))
+	fmt.Printf("Replace(\"AAAAA\", \"A\", \"X\", -1) = %s\n", strings.Replace("AAAAA", "A", "X", -1))
+	fmt.Printf("Replace(\"JIMOTO\", \"TO\", \"AI\", 1) = %s\n", strings.Replace("JIMOTO", "TO", "AI", 1))
 }
