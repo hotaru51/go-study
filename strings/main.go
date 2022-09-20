@@ -54,4 +54,10 @@ func main() {
 	fmt.Printf("Replace(\"AAAAA\", \"A\", \"X\", 3) = %s\n", strings.Replace("AAAAA", "A", "X", 3))
 	fmt.Printf("Replace(\"AAAAA\", \"A\", \"X\", -1) = %s\n", strings.Replace("AAAAA", "A", "X", -1))
 	fmt.Printf("Replace(\"JIMOTO\", \"TO\", \"AI\", 1) = %s\n", strings.Replace("JIMOTO", "TO", "AI", 1))
+
+	// split
+	fmt.Printf("Split(\"you,chika,ruby,yoshiko\", \",\") = %v\n", strings.Split("you,chika,ruby,yoshiko", ","))
+	fmt.Printf("SplitAfter(\"you,chika,ruby,yoshiko\", \",\") = %v\n", strings.SplitAfter("you,chika,ruby,yoshiko", ","))
+	fmt.Printf("SplitN(\"you,chika,ruby,yoshiko\", \",\", 3) = %v\n", strings.SplitN("you,chika,ruby,yoshiko", ",", 3))
+	fmt.Printf("SplitAfterN(\"you,chika,ruby,yoshiko\", \",\", 3) = %v\n", strings.SplitAfterN("you,chika,ruby,yoshiko", "," ,3))
 }
