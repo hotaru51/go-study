@@ -61,6 +61,10 @@ func main() {
 	fmt.Printf("SplitN(\"you,chika,ruby,yoshiko\", \",\", 3) = %v\n", strings.SplitN("you,chika,ruby,yoshiko", ",", 3))
 	fmt.Printf("SplitAfterN(\"you,chika,ruby,yoshiko\", \",\", 3) = %v\n", strings.SplitAfterN("you,chika,ruby,yoshiko", "," ,3))
 
+	// 大文字・小文字の変換
+	fmt.Printf("ToLower(\"You Watanabe\") = %s\n", strings.ToLower("You Watanabe"))
+	fmt.Printf("ToUpper(\"You Watanabe\") = %s\n", strings.ToUpper("You Watanabe"))
+
 	// 文字列から空白を取り除く
 	fmt.Printf("TrimSpace(\"  Aqours  -\") = %s\n", strings.TrimSpace("  Aqours  -"))
 	fmt.Printf("TrimSpace(\"\tAqours  \r\n\") = %s\n", strings.TrimSpace("\tAqours  \r\n"))
