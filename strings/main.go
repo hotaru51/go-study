@@ -69,4 +69,11 @@ func main() {
 	fmt.Printf("TrimSpace(\"  Aqours  -\") = %s\n", strings.TrimSpace("  Aqours  -"))
 	fmt.Printf("TrimSpace(\"\tAqours  \r\n\") = %s\n", strings.TrimSpace("\tAqours  \r\n"))
 	fmt.Printf("TrimSpace(\"　　Aqours  -　\") = %s\n", strings.TrimSpace("　　Aqours  -　"))
+
+	// スペースで区切られたフィールドを取り出す
+	fmt.Printf("Fields(\"you chika ruby\") = %v\n", strings.Fields("you chika ruby"))
+	// タブや改行が含まれていても動作する
+	fmt.Printf("Fields(\"    you\tchika\n  ruby\") = %v\n", strings.Fields("    you\tchika\n  ruby"))
+	// 全角スペースでも動作する
+	fmt.Printf("Fields(\"you　chika　ruby\") = %v\n", strings.Fields("you　chika　ruby"))
 }
